@@ -1,0 +1,367 @@
+
+
+##### ************************************ LOGIN ************************************
+
+
+########## Get Login Patients ##########
+POST http://localhost:8080/PRC/api/auth/login
+Content-Type: application/json
+
+{
+  "username":"P123456789",
+  "password":"12345"
+}
+
+########## Get Login HealthcareProfessional ##########
+POST http://localhost:8080/PRC/api/auth/login
+Content-Type: application/json
+
+{
+"username":"H900000001",
+"password":"12345"
+}
+
+########## Get Login Administrator ##########
+POST http://localhost:8080/PRC/api/auth/login
+Content-Type: application/json
+
+{
+  "username":"A142394274",
+  "password":"password"
+}
+
+##### ************************************ ADMINISTRATORS ************************************
+
+########## Get all Administrators ##########
+GET http://localhost:8080/PRC/api/administrators
+Accept: application/json
+
+### GET administrator
+GET http://localhost:8080/PRC/api/administrators/A142394274
+
+### CREATE administrator
+POST http://localhost:8080/PRC/api/administrators
+Content-Type: application/json
+
+{
+  "healthNumber": 111222333,
+  "name": "Rui Potassio",
+  "email": "rui.potassio@mail.com",
+  "password": "mendes123",
+  "birthDate": "25/12/1970",
+  "contact": "919293956"
+}
+
+### UPDATE administrator
+PUT http://localhost:8080/PRC/api/administrators/A142394274
+Content-Type: application/json
+
+{
+  "name": "Carl Carl",
+  "email": "carl.alen@mail.com",
+  "password": "carl14441",
+  "birthDate": "17/04/1960",
+  "contact": "919191911"
+}
+
+### DELETE administrator
+DELETE http://localhost:8080/PRC/api/administrators/A142394274
+
+### DELETE administrator
+DELETE http://localhost:8080/PRC/api/administrators/A111222333
+
+##### ************************************ DISEASE ************************************
+
+########## DISEASE ##########
+GET http://localhost:8080/PRC/api/diseases
+Accept: application/json
+
+### GET disease
+GET http://localhost:8080/PRC/api/diseases/1
+
+### CREATE disease
+POST http://localhost:8080/PRC/api/diseases
+Content-Type: application/json
+
+{
+  "code": 2,
+  "name": "Endocardite",
+  "type": "acute infective endocarditis"
+}
+
+### UPDATE disease
+PUT http://localhost:8080/PRC/api/diseases/1
+Content-Type: application/json
+
+{
+  "name": "gelado",
+  "type": null
+}
+
+### DELETE disease
+DELETE http://localhost:8080/PRC/api/diseases/1
+
+### GET disease patients
+GET http://localhost:8080/PRC/api/diseases/1/patients
+
+
+
+##### ************************************ HEALTHCARE PROFESSIONALS ************************************
+
+########## GET ALL ##########
+GET http://localhost:8080/PRC/api/healthcareProfessionals
+
+########## Create ##########
+POST http://localhost:8080/PRC/api/healthcareProfessionals
+Content-Type: application/json
+
+{
+  "healthNumber": 394628427,
+  "name": "Mike Varshavski",
+  "email": "mike_var@outlook.com",
+  "password": "eksm24_k",
+  "birthDate": "12/10/1989",
+  "contact": "+351924331081",
+  "type": "family_doctor"
+}
+
+########## Update ##########
+PUT http://localhost:8080/PRC/api/healthcareProfessionals/H394628427
+Content-Type: application/json
+
+{
+"name": "Mike Varshavski",
+"email": "mike@gmail.com",
+"password": "smdk2"
+}
+
+########## DELETE ##########
+DELETE http://localhost:8080/PRC/api/healthcareProfessionals/H111111321
+
+########## GET DETAILS ##########
+GET http://localhost:8080/PRC/api/healthcareProfessionals/H111111321
+Authorization: Bearer eyJ0eXAiOiJqd3QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJIMTExMTExMzIxIiwiaXNzIjoicXVpY2tzdGFydC1qd3QtaXNzdWVyIiwiYXVkIjoiand0LWF1ZGllbmNlIiwiZ3JvdXBzIjpbIkhlYWx0aGNhcmVQcm9mZXNzaW9uYWwiXSwiZXhwIjoxNjQwNzM2MzYyfQ.RBKOAb1HUJHP0-_7T-XMilag_A-hdHKFvk0_mcOIOtpy5K7qRDUrCQnexDX4r_Vo-b9UjR4q9vuoXFeeV3EY-H0a3SnvxQC1dRwqjlOscAWQ0G_6Xuqj8EcZpeSUGsVZSrFA7oywG21iuxbQWhbRbe8J1HVQ_9Er6pH7BmYTuidsmlQ39H6AQsp-rIy8FzxUEqkuxmqa8tlJm7-nqEFwL-_bfew6af-qzyu8oKQ_1JfT8QbcdAqVVJze9uLFHJaOqFTtn5YdyxE5o_9Fo7JFz4r0xeP1TjxvpSG8ox7soUhSOVwCdgQqw_yiU0PpjUjgrwuD7qakWHtaLSH3e99-9w
+
+
+
+########## GET PATIENT ##########
+GET http://localhost:8080/PRC/api/healthcareProfessionals/H111111321/patients
+Authorization: Bearer eyJ0eXAiOiJqd3QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJIMTExMTExMzIxIiwiaXNzIjoicXVpY2tzdGFydC1qd3QtaXNzdWVyIiwiYXVkIjoiand0LWF1ZGllbmNlIiwiZ3JvdXBzIjpbIkhlYWx0aGNhcmVQcm9mZXNzaW9uYWwiXSwiZXhwIjoxNjQwNzM2MzYyfQ.RBKOAb1HUJHP0-_7T-XMilag_A-hdHKFvk0_mcOIOtpy5K7qRDUrCQnexDX4r_Vo-b9UjR4q9vuoXFeeV3EY-H0a3SnvxQC1dRwqjlOscAWQ0G_6Xuqj8EcZpeSUGsVZSrFA7oywG21iuxbQWhbRbe8J1HVQ_9Er6pH7BmYTuidsmlQ39H6AQsp-rIy8FzxUEqkuxmqa8tlJm7-nqEFwL-_bfew6af-qzyu8oKQ_1JfT8QbcdAqVVJze9uLFHJaOqFTtn5YdyxE5o_9Fo7JFz4r0xeP1TjxvpSG8ox7soUhSOVwCdgQqw_yiU0PpjUjgrwuD7qakWHtaLSH3e99-9w
+
+
+########## ADD PATIENT ##########
+POST http://localhost:8080/PRC/api/healthcareProfessionals/H111111321/AddPatient/P123456789
+
+########## REMOVE PATIENT ##########
+DELETE http://localhost:8080/PRC/api/healthcareProfessionals/H111111321/RemovePatient/P123456789
+
+########## GET PRESCRIPTION ##########
+GET http://localhost:8080/PRC/api/healthcareProfessionals/H111111321/prescriptions
+
+########## ADD PRESCRIPTION ##########
+POST http://localhost:8080/PRC/api/healthcareProfessionals/H111111321/AddPrescription/1
+
+########## REMOVE PRESCRIPTION ##########
+POST http://localhost:8080/PRC/api/healthcareProfessionals/H111111321/RemovePrescription/1
+Content-Type: application/json
+
+{
+  "passwordOld": "1234",
+  "password": "12345"
+}
+
+
+##### ************************************ PRESCRIPTIONS ************************************
+
+########## All ##########
+GET http://localhost:8080/PRC/api/prescriptions
+Authorization: Bearer eyJ0eXAiOiJqd3QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJIOTAwMDAwMDAxIiwiaXNzIjoicXVpY2tzdGFydC1qd3QtaXNzdWVyIiwiYXVkIjoiand0LWF1ZGllbmNlIiwiZ3JvdXBzIjpbIkhlYWx0aGNhcmVQcm9mZXNzaW9uYWwiXSwiZXhwIjoxNjQxMTM3NDQ2fQ.Yh_zSuN21X8MeMSWeK6qcJx5LnS4TYK8uVzeh0kEtA2Z6pTNvX7tPFMjbbLw7k7PrseTYn_2fgKZRbQ7OTikuH23JmbEihjpvEtFdNsrbEUpODeJ3_xqMnb0B8_YGpxS_BIf_fCO2ShPmIWVV1xMmGxmZYWFiMa1ERiLRmMx_vWcTC7XzXqTfdwbDLtiqny9JSDLfIYYt4EcMNUvFQdEnYPtbWSCIo2GrfdvPaI5jLA4zbAz-ZFGuekkVpF_RcGVD_u9401LMuV9elAaGkRzgnIDfBPRL3aWUAQbdRKQtVcl00KU-q4MOCFifyoYXf5IEV6hXgQMxH1NEhLDzRB5iQ
+
+########## Create ##########
+POST http://localhost:8080/PRC/api/prescriptions
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJqd3QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJIOTAwMDAwMDAxIiwiaXNzIjoicXVpY2tzdGFydC1qd3QtaXNzdWVyIiwiYXVkIjoiand0LWF1ZGllbmNlIiwiZ3JvdXBzIjpbIkhlYWx0aGNhcmVQcm9mZXNzaW9uYWwiXSwiZXhwIjoxNjQxMTM3NDQ2fQ.Yh_zSuN21X8MeMSWeK6qcJx5LnS4TYK8uVzeh0kEtA2Z6pTNvX7tPFMjbbLw7k7PrseTYn_2fgKZRbQ7OTikuH23JmbEihjpvEtFdNsrbEUpODeJ3_xqMnb0B8_YGpxS_BIf_fCO2ShPmIWVV1xMmGxmZYWFiMa1ERiLRmMx_vWcTC7XzXqTfdwbDLtiqny9JSDLfIYYt4EcMNUvFQdEnYPtbWSCIo2GrfdvPaI5jLA4zbAz-ZFGuekkVpF_RcGVD_u9401LMuV9elAaGkRzgnIDfBPRL3aWUAQbdRKQtVcl00KU-q4MOCFifyoYXf5IEV6hXgQMxH1NEhLDzRB5iQ
+
+{
+  "expireDate": "22/10/2021",
+  "isPharmacological": "Yes",
+  "observations": "acetaminophen 650 mg tablets, prednisone 50 mg",
+  "title": "Medications list",
+  "treatmentInfo": "gg",
+  "usernamePatient":"900000011",
+  "usernameHealthcareProfessional":"900000001"
+}
+
+########## Details ##########
+GET http://localhost:8080/PRC/api/prescriptions/1
+Authorization: Bearer eyJ0eXAiOiJqd3QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJIMTExMTExMzIxIiwiaXNzIjoicXVpY2tzdGFydC1qd3QtaXNzdWVyIiwiYXVkIjoiand0LWF1ZGllbmNlIiwiZ3JvdXBzIjpbIkhlYWx0aGNhcmVQcm9mZXNzaW9uYWwiXSwiZXhwIjoxNjQwNzIwODc5fQ.kQYqZibdReHqQ_WRGN3JYWqFC68Ng2hkxHTcJD1YjJwkxsyCWWfa8sflcuq1pdAULuEDIh3ifTmCgLvpY8SmFHVhLVmBw3CIh_OviIlcFsKZBwVifmkKVng2-qJydAIRirjBoaPnfkEg_AmZDtR63Rmc3J4pyatHouUTubRI_qSbxBmlZmkVmlJj3uhbksint6meAcBjnsR0qW-el6_KY2o-oqxxJNTbtZeq9VEWoMZ2kIgKh-8pjPZkA7U4HhUA580VzH9Q1l_sHXjJtpKF5wEuYihiiJnk6IEMZKwDI5ccoPlmgO_XezJ_EmpgDwWBi3uzBig3KMt3Ve4HwwbZ3w
+
+
+########## Update ##########
+PUT http://localhost:8080/PRC/api/prescriptions/2
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJqd3QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJIMTExMTExMzIxIiwiaXNzIjoicXVpY2tzdGFydC1qd3QtaXNzdWVyIiwiYXVkIjoiand0LWF1ZGllbmNlIiwiZ3JvdXBzIjpbIkhlYWx0aGNhcmVQcm9mZXNzaW9uYWwiXSwiZXhwIjoxNjQwNzIwODc5fQ.kQYqZibdReHqQ_WRGN3JYWqFC68Ng2hkxHTcJD1YjJwkxsyCWWfa8sflcuq1pdAULuEDIh3ifTmCgLvpY8SmFHVhLVmBw3CIh_OviIlcFsKZBwVifmkKVng2-qJydAIRirjBoaPnfkEg_AmZDtR63Rmc3J4pyatHouUTubRI_qSbxBmlZmkVmlJj3uhbksint6meAcBjnsR0qW-el6_KY2o-oqxxJNTbtZeq9VEWoMZ2kIgKh-8pjPZkA7U4HhUA580VzH9Q1l_sHXjJtpKF5wEuYihiiJnk6IEMZKwDI5ccoPlmgO_XezJ_EmpgDwWBi3uzBig3KMt3Ve4HwwbZ3w
+
+
+{
+  "title": "Medications",
+  "observations": "benorun 650 mg tablets, griponal 50 mg",
+  "emissionDate": "22/10/2021",
+  "expireDate": "22/12/2021",
+  "usernamePatient":"P978675432"
+}
+
+########## Delete ##########
+DELETE http://localhost:8080/PRC/api/prescriptions/1
+Authorization: Bearer eyJ0eXAiOiJqd3QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJIMTExMTExMzIxIiwiaXNzIjoicXVpY2tzdGFydC1qd3QtaXNzdWVyIiwiYXVkIjoiand0LWF1ZGllbmNlIiwiZ3JvdXBzIjpbIkhlYWx0aGNhcmVQcm9mZXNzaW9uYWwiXSwiZXhwIjoxNjQwNzIwODc5fQ.kQYqZibdReHqQ_WRGN3JYWqFC68Ng2hkxHTcJD1YjJwkxsyCWWfa8sflcuq1pdAULuEDIh3ifTmCgLvpY8SmFHVhLVmBw3CIh_OviIlcFsKZBwVifmkKVng2-qJydAIRirjBoaPnfkEg_AmZDtR63Rmc3J4pyatHouUTubRI_qSbxBmlZmkVmlJj3uhbksint6meAcBjnsR0qW-el6_KY2o-oqxxJNTbtZeq9VEWoMZ2kIgKh-8pjPZkA7U4HhUA580VzH9Q1l_sHXjJtpKF5wEuYihiiJnk6IEMZKwDI5ccoPlmgO_XezJ_EmpgDwWBi3uzBig3KMt3Ve4HwwbZ3w
+
+
+##### ************************************ PATIENT ****************************************
+
+### GET ALL PATIENTS
+GET http://localhost:8080/PRC/api/patients
+Authorization: Bearer eyJ0eXAiOiJqd3QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJIMTExMTExMzIxIiwiaXNzIjoicXVpY2tzdGFydC1qd3QtaXNzdWVyIiwiYXVkIjoiand0LWF1ZGllbmNlIiwiZ3JvdXBzIjpbIkhlYWx0aGNhcmVQcm9mZXNzaW9uYWwiXSwiZXhwIjoxNjQwNzM3MDc2fQ.IQIzyNZfQW5qmCkUPSoo07rG5k06de-Ivy_b_zdNJNaOJ7vNbRHNjeYNDJ-iboydmckS86bjN8ME_Kt75G89xReQFkGj5ekDcO-Gnk6uOJezkW7ed6kdIRgwM3D-F3FMNYlpHUfdV7tHHeD-6cmRTATFgEe_9rGSrI9xL0_pmtd-IixmVj3Rq1lR5tTtDW6Iz-D1Xt6Yol3_M-9UfKyz2ra7PRMiCgeep7xzyT9k5w8Og9JrWRgbagePAGIs6iJX_l_Gv4VljeuUV3u72SHd2N1Q9RBbuoem9Swx1YtTbUSvZcgDlb9IHYgq51VlSLupiCmnqKkyE0CIPYocr-KCdg
+
+########## Create ##########
+POST http://localhost:8080/PRC/api/patients
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJqd3QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJQOTc4Njc1NDMyIiwiaXNzIjoicXVpY2tzdGFydC1qd3QtaXNzdWVyIiwiYXVkIjoiand0LWF1ZGllbmNlIiwiZ3JvdXBzIjpbIlBhdGllbnQiXSwiZXhwIjoxNjQwNzE4NzUxfQ.dQorVZ4buPrDWwmyuy7qvYvzHE-wMfWVxXDY7Yru6nWV6nj7HZY4mRGO-5IgIzXD8l0FIyfyJfal0P2_6Jpw5jpMtAmnG4T8p7YRVUCqFTRetYlbSpI-XdNWItD5m6sVE0rYUcSho_0rcVTNE7wGPeFpyYvfh7JKCayly3C3rA44DXjr_HkDdUwBO4Z0hdXRKhbXWuSw4Lz_M0-N7fATnkIDYoh2PNfFj9uONaoBIK3W2nDIuFELaNojDpZMk0Qgu-rPKXIgTC0-t73pf95GiFaxlILCX3XKSAj1G472fTHHyZixyyzx-qm1YHs5mSoPAkq6ZAqztUsLwK1W0DRZCg
+
+{
+  "healthNumber": 248364182,
+  "name": "Levi Ackerman",
+  "email": "ackerman@outlook.com",
+  "password": "skfm_48",
+  "birthDate": "11/12/1994",
+  "contact": "+351972374392"
+}
+
+########## Update ##########
+PUT http://localhost:8080/PRC/api/patients/P248364182
+Content-Type: application/json
+
+{
+  "email": "levi_ackerman@outlook.com",
+  "contact": "+351111222333"
+}
+
+### Update
+PUT http://localhost:8080/PRC/api/patients/P123456789
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJqd3QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJIMTExMTExMzIxIiwiaXNzIjoicXVpY2tzdGFydC1qd3QtaXNzdWVyIiwiYXVkIjoiand0LWF1ZGllbmNlIiwiZ3JvdXBzIjpbIkhlYWx0aGNhcmVQcm9mZXNzaW9uYWwiXSwiZXhwIjoxNjQwNzIwODc5fQ.kQYqZibdReHqQ_WRGN3JYWqFC68Ng2hkxHTcJD1YjJwkxsyCWWfa8sflcuq1pdAULuEDIh3ifTmCgLvpY8SmFHVhLVmBw3CIh_OviIlcFsKZBwVifmkKVng2-qJydAIRirjBoaPnfkEg_AmZDtR63Rmc3J4pyatHouUTubRI_qSbxBmlZmkVmlJj3uhbksint6meAcBjnsR0qW-el6_KY2o-oqxxJNTbtZeq9VEWoMZ2kIgKh-8pjPZkA7U4HhUA580VzH9Q1l_sHXjJtpKF5wEuYihiiJnk6IEMZKwDI5ccoPlmgO_XezJ_EmpgDwWBi3uzBig3KMt3Ve4HwwbZ3w
+
+{
+  "email": "levi_ackerman@outlook.com",
+  "contact": "+351111222333"
+}
+
+
+### GET details
+GET http://localhost:8080/PRC/api/patients/P123456789
+Authorization: Bearer eyJ0eXAiOiJqd3QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJIMTExMTExMzIxIiwiaXNzIjoicXVpY2tzdGFydC1qd3QtaXNzdWVyIiwiYXVkIjoiand0LWF1ZGllbmNlIiwiZ3JvdXBzIjpbIkhlYWx0aGNhcmVQcm9mZXNzaW9uYWwiXSwiZXhwIjoxNjQwNzM3MDc2fQ.IQIzyNZfQW5qmCkUPSoo07rG5k06de-Ivy_b_zdNJNaOJ7vNbRHNjeYNDJ-iboydmckS86bjN8ME_Kt75G89xReQFkGj5ekDcO-Gnk6uOJezkW7ed6kdIRgwM3D-F3FMNYlpHUfdV7tHHeD-6cmRTATFgEe_9rGSrI9xL0_pmtd-IixmVj3Rq1lR5tTtDW6Iz-D1Xt6Yol3_M-9UfKyz2ra7PRMiCgeep7xzyT9k5w8Og9JrWRgbagePAGIs6iJX_l_Gv4VljeuUV3u72SHd2N1Q9RBbuoem9Swx1YtTbUSvZcgDlb9IHYgq51VlSLupiCmnqKkyE0CIPYocr-KCdg
+
+
+### GET diseases
+GET http://localhost:8080/PRC/api/patients/P248364182/diseases
+
+### Add disease
+POST http://localhost:8080/PRC/api/patients/P248364182/addDisease/2
+
+### Add disease
+POST http://localhost:8080/PRC/api/patients/P248364182/addDisease/1
+
+### Remove disease
+POST http://localhost:8080/PRC/api/patients/P248364182/removeDisease/2
+
+### Add prescription
+POST http://localhost:8080/PRC/api/patients/P248364182/addPrescription/2
+
+### Remove prescription
+POST http://localhost:8080/PRC/api/patients/P248364182/removePrescription/1
+
+##### ************************************ BIOMEDIC DATA MEASURE ****************************************
+
+### GET ALL
+GET http://localhost:8080/PRC/api/biomedicDataMeasures
+Authorization: Bearer eyJ0eXAiOiJqd3QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJIOTAwMDAwMDAxIiwiaXNzIjoicXVpY2tzdGFydC1qd3QtaXNzdWVyIiwiYXVkIjoiand0LWF1ZGllbmNlIiwiZ3JvdXBzIjpbIkhlYWx0aGNhcmVQcm9mZXNzaW9uYWwiXSwiZXhwIjoxNjQxMTQ0MDk4fQ.kdIeV6F2s7-cGzfAQ7VR1fyq-5DorJviDwY2yRBpEAAsPKFvVfXljH39SdtMaispaimBZPq506mHvp6kSczaFOZRClyeItnFrOAInyuXUgU1p6B1DbKvpQ2lu_Sjd5pG5prlaYIi_ZHnqxozvRfcSDa3fN6yzPtnysRozVWG36TVxq1HYGtIt2VKUZhdAToBLsmu3NbnXNva1VOvLcctyWWCHZzPU54hrl7Rr_i_5nGNUCXSP3Y__2h_fHEvcaiS679nOu97pQHOuG6BzCuN5RWVazKByeCK368FIU4xK2lagWYfX0vfoJ-bx3RIE0ydOiJeyC9WQ1iExqmc9EIFyw
+
+########## Create ##########
+POST http://localhost:8080/PRC/api/biomedicDataMeasures
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJqd3QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJIOTAwMDAwMDAxIiwiaXNzIjoicXVpY2tzdGFydC1qd3QtaXNzdWVyIiwiYXVkIjoiand0LWF1ZGllbmNlIiwiZ3JvdXBzIjpbIkhlYWx0aGNhcmVQcm9mZXNzaW9uYWwiXSwiZXhwIjoxNjQxMTQ0MDk4fQ.kdIeV6F2s7-cGzfAQ7VR1fyq-5DorJviDwY2yRBpEAAsPKFvVfXljH39SdtMaispaimBZPq506mHvp6kSczaFOZRClyeItnFrOAInyuXUgU1p6B1DbKvpQ2lu_Sjd5pG5prlaYIi_ZHnqxozvRfcSDa3fN6yzPtnysRozVWG36TVxq1HYGtIt2VKUZhdAToBLsmu3NbnXNva1VOvLcctyWWCHZzPU54hrl7Rr_i_5nGNUCXSP3Y__2h_fHEvcaiS679nOu97pQHOuG6BzCuN5RWVazKByeCK368FIU4xK2lagWYfX0vfoJ-bx3RIE0ydOiJeyC9WQ1iExqmc9EIFyw
+
+{
+  "value": 37.2,
+  "date": "01/11/2021",
+  "hour": "12:35",
+  "usernamePatient": "900000011",
+  "biomedicDataTypeCode": 1
+}
+
+### Get details
+GET http://localhost:8080/PRC/api/biomedicDataMeasures/1
+
+
+### Update
+PUT http://localhost:8080/PRC/api/biomedicDataMeasures/1
+Content-Type: application/json
+
+{
+  "value": 40.2,
+  "hour": "14:00"
+}
+
+### Delete
+DELETE http://localhost:8080/PRC/api/biomedicDataMeasures/1
+
+
+##### ****************************** JWT ******************************
+
+### Get JWT PATIENT
+POST http://localhost:8080/PRC/api/auth/login
+Content-Type: application/x-www-form-urlencoded
+
+username=P978675432&password=12345
+
+
+### Get JWT ADMIN
+POST http://localhost:8080/PRC/api/auth/login
+Content-Type: application/json
+
+{"username":"H900000007","password":"12345"}
+
+##### Get patients list
+GET http://localhost:8080/PRC/api/patients
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJqd3QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJIOTAwMDAwMDAxIiwiaXNzIjoicXVpY2tzdGFydC1qd3QtaXNzdWVyIiwiYXVkIjoiand0LWF1ZGllbmNlIiwiZ3JvdXBzIjpbIkhlYWx0aGNhcmVQcm9mZXNzaW9uYWwiXSwiZXhwIjoxNjQxMTQ3NDkwfQ.GE4yjr2HlLX4gFVkckBg79HVXDWvDfJtJqzJrYbWN9hN_tA9lj9Y4lHoKaBUXY6w2UxSbSanQVwEqxJDi41GsYJgx0_LQJzlBThLPbLMl3nGYQ-E0VDkdDrOd0036dS54zoibu8c6nthbYNEsBHY_QGT-ypdq4Hpm59yjnLEQuRwbzjFPVFqpwPrRq04ExCLbNk7BXffPJv-4tybFxTjOlHsnkDr31BHkc9rGOnIEMAgnnDVBt5PcAnEYWfX2xZFZUmI79hyBVNke-jdfkjkhe6wUZcvlsARQmeAVamzc4lZLBPDC-ublBCnf-MYZUBpHQr9BaB1k1BfJkID-_-jew
+
+##### Get patients list
+GET http://localhost:8080/PRC/api/healthcareProfessionals/H900000001/patients
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJqd3QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJIOTAwMDAwMDAxIiwiaXNzIjoicXVpY2tzdGFydC1qd3QtaXNzdWVyIiwiYXVkIjoiand0LWF1ZGllbmNlIiwiZ3JvdXBzIjpbIkhlYWx0aGNhcmVQcm9mZXNzaW9uYWwiXSwiZXhwIjoxNjQxMTQ3NDkwfQ.GE4yjr2HlLX4gFVkckBg79HVXDWvDfJtJqzJrYbWN9hN_tA9lj9Y4lHoKaBUXY6w2UxSbSanQVwEqxJDi41GsYJgx0_LQJzlBThLPbLMl3nGYQ-E0VDkdDrOd0036dS54zoibu8c6nthbYNEsBHY_QGT-ypdq4Hpm59yjnLEQuRwbzjFPVFqpwPrRq04ExCLbNk7BXffPJv-4tybFxTjOlHsnkDr31BHkc9rGOnIEMAgnnDVBt5PcAnEYWfX2xZFZUmI79hyBVNke-jdfkjkhe6wUZcvlsARQmeAVamzc4lZLBPDC-ublBCnf-MYZUBpHQr9BaB1k1BfJkID-_-jew
+
+##### Get prescriptions
+GET http://localhost:8080/PRC/api/patients/P900000011/prescriptions
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJqd3QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJIOTAwMDAwMDA3IiwiaXNzIjoicXVpY2tzdGFydC1qd3QtaXNzdWVyIiwiYXVkIjoiand0LWF1ZGllbmNlIiwiZ3JvdXBzIjpbIkhlYWx0aGNhcmVQcm9mZXNzaW9uYWwiXSwiZXhwIjoxNjQxMTUwNDk4fQ.RO5y0epZQOrgPDew2onZb8gnGJj_mg8JsZvTYrJOw-80kMQBlL1TyurxA9faR4jM6cSpRVhYn0r5TZPlSWW2vKz1tiiDVjfvREEsW9v-_EGP3cFBkybYjIgdg1tCtbU6QBHrIbwd0_tUr_FV-4YWN4LhtM44HGxbKw8geRurE2Y12Hg9w4KXucvCcaCXyocgIIXiBx7bkMSMgFiPA_oL2cIw1cB9uXFSq_iNOHvucZxyVxYWh3RRCXpglaQka6knX74auebNPPqw_imLF7IJ6uGRMfMc15ALryq0bnnw5AXQR22IlTzI8GxTizIwA84ADKCYOWCgNsizXvddP1b_CQ
+
+### Get JWT HEALTHCARE PROF
+POST http://localhost:8080/PRC/api/auth/login
+Content-Type: application/x-www-form-urlencoded
+
+username=H987654321&password=1234
+
+##### Get patients list
+POST http://localhost:8080/PRC/api/patients
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJqd3QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJIOTAwMDAwMDA3IiwiaXNzIjoicXVpY2tzdGFydC1qd3QtaXNzdWVyIiwiYXVkIjoiand0LWF1ZGllbmNlIiwiZ3JvdXBzIjpbIkhlYWx0aGNhcmVQcm9mZXNzaW9uYWwiXSwiZXhwIjoxNjQxMzMzMzk3fQ.gNHp_KcSWNhQiO-Gq4gte1LQ3MTMO_hiwEtB22QEcEMkF67M85eN1hkpi6EXnjI-wHB6eeN9KSdGbddwzMWZpQHitRyyX-5PMeIjwD_wB7d1LWBkFUODhoM_-ePbcdKcS5C3aOc45iqiCuVRwHQXRnJQn26LcYbcs4ZJ7_QlbxseJoDufeTtgc-pHyqXpsmy-LcCd5AsOMeeBVjYVGGXHSp-zT_fppuy3z1bPvNM20lwIfHVUyl4C5JfSmXlmYlHlPrDtzooLkmJ1eCPqzJ-Bxm56e9k5mr0NSxklkVVOy9C3YBO3Qe2-DPLh-V_2YVG17f1Whj6r8pL_DmfL1p7_A
+Content-Type: application/json
+
+{
+  "healthNumber": 248364133,
+  "name": "Levi Ackerman",
+  "email": "ackerman",
+  "birthDate": "11/12/1994",
+  "contact": "911111111",
+  "gender": "Masculino"
+}
