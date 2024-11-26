@@ -5,6 +5,9 @@
 The main objective of this project is to develop a clinical enterprise application for managing biomedical data and signals of individuals with cardiovascular diseases.  
 This repository showcases the front-end (client) of the application, built with **NUXT.JS**, while the backend is implemented in **JAVA**, and the environment is managed using **Docker**.
 
+
+![Sample Diagram](Assets/Entidade_relacionamento.png)
+
 ---
 
 ## Features by User Role
